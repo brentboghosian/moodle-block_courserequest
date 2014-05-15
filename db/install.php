@@ -97,5 +97,9 @@ function xmldb_block_courserequest_install() {
         $DB->update_record('capabilities', $cap);
     }
 
+    // Migrate language strings
+    $migrator = new \local_eliscore\install\migration\migrator('block_course_request', 'block_courserequest');
+    $migrator->migrate_language_strings();
+
     return $result;
 }
