@@ -1,7 +1,7 @@
 <?php
 /**
  * ELIS(TM): Enterprise Learning Intelligence Suite
- * Copyright (C) 2008-2014 Remote-Learner.net Inc (http://www.remote-learner.net)
+ * Copyright (C) 2008-2015 Remote-Learner.net Inc (http://www.remote-learner.net)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
  * @subpackage block_courserequest
  * @author     Remote-Learner.net Inc
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- * @copyright  (C) 2008-2014 Remote-Learner.net Inc (http://www.remote-learner.net)
+ * @copyright  (C) 2008-2015 Remote-Learner.net Inc (http://www.remote-learner.net)
  */
 
 defined('MOODLE_INTERNAL') || die();
@@ -392,8 +392,8 @@ class courserequestapprovepage extends pm_page {
                 // copy role over into Moodle course
                 if (!empty($config->class_role)) {
                     require_once($CFG->dirroot.'/local/elisprogram/lib/data/classmoodlecourse.class.php');
-                    if ($class_moodle_record = $DB->get_record(classmoodlecourse::TABLE, array('classid' => $newclass->id))) {
-                        $context = context_course::instance($class_moodle_record->moodlecourseid);
+                    if ($classmoodlerec = $DB->get_record_select(classmoodlecourse::TABLE, 'classid = ? AND moodlecourseid > 0', array($newclass->id))) {
+                        $context = context_course::instance($classmoodlerec->moodlecourseid);
                         role_assign($config->class_role, $request->userid, $context->id, ECR_MC_ROLE_COMPONENT);
                     }
                 }
