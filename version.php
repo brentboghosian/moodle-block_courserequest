@@ -25,9 +25,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2015010401;
-$plugin->release = '2.8.5.0 (Build: 20150317)';
+$plugin->version = 2015051100;
+$plugin->release = '2.9.0.0 (Build: 20150511)';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->dependencies = array(
-    'local_elisprogram' => 2015010401
+    'local_elisprogram' => 2015051100
 );
