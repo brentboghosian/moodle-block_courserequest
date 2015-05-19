@@ -65,4 +65,12 @@ $capabilities = array(
             'manager' => CAP_ALLOW
         ),
     ),
+    'block/courserequest:myaddinstance' => array(
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_BLOCK,
+        'clonepermissionsfrom' => 'block/course_request:addinstance',
+        'archetypes' => array(
+            'manager' => CAP_ALLOW
+        ),
+    ),
 );

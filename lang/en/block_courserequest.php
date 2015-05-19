@@ -50,6 +50,7 @@ $string['course'] = 'Course Description';
 $string['courserequest:addinstance'] = 'Add a new Class Request block';
 $string['courserequest:approve'] = 'Approve class requests';
 $string['courserequest:config'] = 'Configure class request form';
+$string['courserequest:myaddinstance'] = 'Add a new Class Request block to My home page';
 $string['courserequest:request'] = 'Request creation of new classes';
 $string['course_role'] = 'Course Description Role';
 $string['courserequestpages'] = 'Class Request Page';
