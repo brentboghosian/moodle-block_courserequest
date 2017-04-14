@@ -53,7 +53,7 @@ class block_courserequest extends block_base {
 
         $context = context_system::instance();
 
-        $this->content = new object();
+        $this->content = new stdClass();
         $this->content->text = '';
         $this->content->footer = '';
 
